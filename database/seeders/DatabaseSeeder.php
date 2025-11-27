@@ -44,6 +44,8 @@ class DatabaseSeeder extends Seeder
 
             $this->seedProductInventory($product, $scenario, $warehouses);
         }
+
+        $this->call(OrderSeeder::class);
     }
 
     protected function seedProductInventory(Product $product, string $scenario, $warehouses)
