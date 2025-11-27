@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Warehouse>
+ */
+class WarehouseFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'name' => $this->faker->unique()->randomElement([
+                'Main Distribution Hub - Hanoi',
+                'Cold Storage - Hai Phong',
+                'Fulfillment Center - HCMC',
+                'Regional Depot - Da Nang',
+                'Local Hub - Can Tho',
+            ]),
+            'location' => $this->faker->address(),
+        ];
+    }
+}
