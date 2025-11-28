@@ -97,7 +97,7 @@ Follow these steps to deploy the project locally:
 
 1.  **Clone the Repository**
     ```bash
-    git clone [https://github.com/vuongwyen/wms.git](https://github.com/vuongwyen/wms.git)
+    git clone https://github.com/vuongwyen/wms.git
     cd wms
     ```
 
@@ -120,14 +120,19 @@ Follow these steps to deploy the project locally:
     php artisan migrate --seed
     ```
 
-5.  **Access the System**
+5.  **Create an Admin User**
+    Since this is a fresh installation, you need to create your first admin account via the terminal:
+    ```bash
+    php artisan make:filament-user
+    ```
+    *Follow the on-screen prompts to set your Name, Email, and Password.*
+
+6.  **Access the System**
     Start the local development server:
     ```bash
     php artisan serve
     ```
-    Visit `http://127.0.0.1:8000/admin` and log in:
-    * **Email:** `admin@gmail.com`
-    * **Password:** `123456789`
+    Visit `http://127.0.0.1:8000/admin` and log in using the credentials you just created.
 
 ---
 
