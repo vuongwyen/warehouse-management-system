@@ -1,6 +1,6 @@
 <div align="center">
 
-# Nexus WMS | Enterprise Resource Planning
+# WMS | Enterprise Resource Planning
 
 [![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![Filament](https://img.shields.io/badge/Filament-v3-F28D1A?style=for-the-badge&logo=laravel&logoColor=white)](https://filamentphp.com)
@@ -18,9 +18,9 @@
 
 ---
 
-## 💡 Why Choose Nexus WMS?
+## 💡 Why Choose WMS?
 
-Managing inventory with spreadsheets or legacy software often leads to errors, waste, and lost revenue. **Nexus WMS** transforms your supply chain operations by providing a **Single Source of Truth**.
+Managing inventory with spreadsheets or legacy software often leads to errors, waste, and lost revenue. **WMS** transforms your supply chain operations by providing a **Single Source of Truth**.
 
 The system replaces guesswork with **real-time tracking**, minimizes waste through intelligent **FEFO (First Expired, First Out)** strategies, and scales effortlessly from a single warehouse to a multi-facility enterprise network.
 
