@@ -1,119 +1,117 @@
-# Nexus WMS
+# WMS | Enterprise Resource Planning
 
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![Filament](https://img.shields.io/badge/Filament-v3-F28D1A?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-![Version](https://img.shields.io/badge/v2.0-stable-green?style=for-the-badge)
+![Build](https://img.shields.io/badge/Build-Passing-green?style=for-the-badge)
 
-![WMS Dashboard](docs/images/dashboard-v2.png)
+![WMS Dashboard](docs/images/dashboard-main.png)
 
-> **"Precision Inventory Control with FEFO Strategy & Real-time Analytics."**
-
----
-
-## 🚀 What's New in v2.0
-
-Nexus WMS v2.0 Enterprise Edition introduces industrial-grade features designed for high-volume warehouses:
-
-*   **🏗 Advanced Location Management:**
-    *   Full hierarchical storage support: **Warehouse -> Zone -> Rack -> Bin**.
-    *   Precise inventory tracking down to the specific bin level.
-*   **🧠 Smart Picking (FEFO Strategy):**
-    *   **First Expired, First Out:** The system automatically suggests batches with the earliest expiry dates during picking to minimize waste.
-*   **📟 Barcode Integration:**
-    *   Built-in barcode generation for Products and Locations.
-    *   Scan-to-Receive and Scan-to-Pick workflows.
-*   **📊 Real-time Analytics:**
-    *   Live dashboards showing Inventory Turnover Ratio, Stock Movement, and Low Stock Alerts.
+> **"An industrial-grade inventory management solution designed for precision, speed, and scalability. Built with the TALL stack."**
 
 ---
 
-## ✨ Core Features
+## 💡 Why WMS?
 
-### 📦 Master Data Management
-*   **SKU Management:** Detailed product profiles with dimensions, weight, and base units.
-*   **Multi-Warehouse:** Manage inventory across multiple physical facilities.
-*   **Partner Management:** Centralized database for Suppliers and Customers.
-
-### 🏭 Inventory Control
-*   **Batch/Lot Tracking:** Traceability for every item using Batch Codes and Expiry Dates.
-*   **Stock Adjustments:** Audit-ready workflows for correcting discrepancies (Found/Lost/Damaged).
-*   **Stock Transfers:** Seamless movement of stock between Bins or Warehouses.
-
-### ⚙️ Operations
-*   **Inbound (Purchase Orders):**
-    *   Draft -> Confirmed -> Receiving -> Putaway.
-    *   Direct assignment to specific storage Bins.
-*   **Outbound (Sales Orders):**
-    *   Draft -> Confirmed -> Picking -> Packing -> Shipped.
-    *   Automated Pick List generation based on FEFO logic.
-
-### 🛡 Security
-*   **RBAC:** Role-Based Access Control with pre-configured roles:
-    *   **Admin:** Full system control.
-    *   **Warehouse Manager:** Operational oversight.
-    *   **Staff:** Task execution (Scanning, Picking).
+Managing inventory with spreadsheets or legacy software leads to errors, waste, and lost revenue. **WMS** transforms your supply chain operations by providing a single source of truth. It replaces guesswork with real-time tracking, minimizes waste through intelligent **FEFO (First Expired, First Out)** strategies, and scales effortlessly from a single warehouse to a multi-facility enterprise.
 
 ---
 
-## 🛠 Tech Stack & Architecture
+## ✨ Key Features
 
-Built on a robust, modern stack designed for performance and scalability:
+### 📦 Precision Inventory
+*   **Granular Location Management:** Move beyond simple stock counts. Track items down to the specific **Zone, Rack, and Bin**.
+*   **Batch & Lot Tracking:** Complete traceability for every item, including production batches and expiry dates.
+*   **Smart Strategies:** Automated **FEFO** picking logic ensures the oldest stock is used first, significantly reducing spoilage and waste.
 
-*   **Framework:** [Laravel 11](https://laravel.com)
-*   **Admin Panel:** [FilamentPHP v3](https://filamentphp.com)
-*   **Frontend:** [Livewire](https://livewire.laravel.com) & [TailwindCSS](https://tailwindcss.com)
-*   **Database:** MySQL 8
+### 🚀 Operations & Automation
+*   **Barcode Integration:** Built-in tools to generate, print, and scan barcodes for products and locations, streamlining workflows.
+*   **Streamlined Flows:**
+    *   **Inbound:** Efficient Purchase Order management with direct Putaway to bins.
+    *   **Outbound:** Automated Pick List generation for Sales Orders.
+*   **Stock Control:** Comprehensive tools for Stock Adjustments, Transfers, and Audits.
 
-**Core Data Logic:**
-`Products` ↔ `Batches` ↔ `Locations` ↔ `Inventory Transactions` (The Immutable Ledger)
-
----
-
-## 💻 Installation & Setup
-
-Follow these steps to deploy Nexus WMS v2.0 locally:
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-org/nexus-wms.git
-cd nexus-wms
-composer install
-npm install && npm run build
-```
-
-### 2. Environment Setup
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-*Configure your database credentials in `.env`.*
-
-### 3. Migration & Seeding
-Initialize the database with the v2 schema and sample enterprise data:
-```bash
-php artisan migrate --seed --class=WMSv2Seeder
-```
-> **Note:** The `WMSv2Seeder` automatically generates Warehouses, Zones, Racks, Bins, and sample Inventory Transactions.
-
-### 4. Access the System
-Start the server:
-```bash
-php artisan serve
-```
-Login to the Admin Panel at `http://127.0.0.1:8000/admin`:
-*   **Email:** `admin@nexus-wms.com`
-*   **Password:** `password`
+### 📊 Intelligence & Reporting
+*   **Real-time Analytics:** Live dashboards featuring Inventory Turnover, Stock Valuation, and Low Stock Alerts.
+*   **Immutable Audit Trail:** Every movement is recorded in the `inventory_transactions` ledger, ensuring complete accountability.
 
 ---
 
-## 📸 Visuals
+## 🛠 Technology Stack
 
-| Mobile Picking Interface | Location Management | Barcode Print Preview |
-| :---: | :---: | :---: |
-| ![Mobile Picking](docs/images/mobile-picking.png) | ![Locations](docs/images/locations.png) | ![Barcodes](docs/images/barcodes.png) |
+WMS is built on a modern, robust architecture designed for performance and maintainability:
+
+*   **Backend:** [Laravel 11](https://laravel.com) - The PHP framework for web artisans.
+*   **Admin Panel:** [FilamentPHP v3](https://filamentphp.com) - A collection of beautiful, full-stack components.
+*   **Frontend:** [Livewire 3](https://livewire.laravel.com) + [Alpine.js](https://alpinejs.dev) - Dynamic interfaces without the complexity of an SPA.
+*   **Database:** MySQL 8.0 - Optimized schema for high-volume transactions.
+*   **Styling:** [TailwindCSS](https://tailwindcss.com) - Utility-first CSS framework.
 
 ---
 
-**Nexus WMS** - *Built for the Modern Supply Chain.*
+## 💻 Getting Started
+
+Follow these steps to deploy WMS locally for development or testing.
+
+### Prerequisites
+*   PHP 8.2+
+*   Composer
+*   Node.js & NPM
+*   MySQL 8.0+
+
+### Installation
+
+1.  **Clone the Repository**
+    ```bash
+    git clone https://github.com/your-org/wms.git
+    cd wms
+    ```
+
+2.  **Install Dependencies**
+    ```bash
+    composer install
+    npm install && npm run build
+    ```
+
+3.  **Environment Setup**
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+    *Edit `.env` and configure your database connection details.*
+
+4.  **Database Setup**
+    Run the migrations and seed the database with enterprise sample data (Warehouses, Locations, Products, Users):
+    ```bash
+    php artisan migrate --seed
+    ```
+
+5.  **Access the System**
+    Start the local development server:
+    ```bash
+    php artisan serve
+    ```
+    Visit `http://127.0.0.1:8000/admin` and log in:
+    *   **Email:** `admin@wms.com`
+    *   **Password:** `password`
+
+---
+
+## 🏗 Database Architecture
+
+WMS uses a relational model optimized for data integrity:
+
+> **Products** are the core entity, linked to specific **Batches** (for expiry/lot tracking).
+> **Warehouses** contain a hierarchy of **Locations** (Zones -> Racks -> Bins).
+> **Inventory Transactions** act as the central ledger, linking Products, Batches, and Locations to record every single stock movement (In/Out).
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and suggest improvements.
+
+## 📄 License
+
+WMS is open-sourced software licensed under the [MIT license](LICENSE).
